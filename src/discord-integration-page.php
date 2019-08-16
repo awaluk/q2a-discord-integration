@@ -46,6 +46,7 @@ class discord_integration_page
                 qa_insert_login_links(qa_lang_html('discord_integration/not_logged'), 'login')
             );
         }
+        if (qa_is_ip_blocked())
         if (!empty(qa_get('error'))) {
             return $this->get_connection_error();
         }
@@ -59,6 +60,18 @@ class discord_integration_page
             $user_data = $this->api->get_user($token_data['access_token']);
             if (!isset($user_data['username'])) {
                 return $this->get_connection_error();
+            }
+
+            $count = qa_db_read_one_value(qa_db_query_sub(
+                "SELECT COUNT(id_integration) FROM ^discord_integrations WHERE discord_id=# AND disconnected_date IS NULL",
+                $user_data['id']
+            ));
+            if ($count > 0) {
+                return $this->get_page_content(
+                    null,
+                    null,
+                    qa_lang_html('discord_integration/already_connected_account')
+                );
             }
 
             $this->api->join_user_to_guild($user_data['id'], qa_get_logged_in_handle(), $token_data['access_token']);
