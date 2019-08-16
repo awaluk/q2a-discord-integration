@@ -46,7 +46,13 @@ class discord_integration_page
                 qa_insert_login_links(qa_lang_html('discord_integration/not_logged'), 'login')
             );
         }
-        if (qa_is_ip_blocked())
+        if (qa_get_logged_in_flags() & QA_USER_FLAGS_USER_BLOCKED) {
+            return $this->get_page_content(
+                null,
+                null,
+                qa_lang_html('discord_integration/user_blocked')
+            );
+        }
         if (!empty(qa_get('error'))) {
             return $this->get_connection_error();
         }
@@ -126,7 +132,7 @@ class discord_integration_page
         if (!empty(qa_opt('discord_integration_top_info'))) {
             $qa_content['custom'] .= qa_opt('discord_integration_top_info');
         }
-        if (empty($connected_user) && qa_is_logged_in()) {
+        if (empty($connected_user) && qa_is_logged_in() && !(qa_get_logged_in_flags() & QA_USER_FLAGS_USER_BLOCKED)) {
             $url = $this->api->get_discord_url() . '/oauth2/authorize?' . http_build_query([
                     'client_id' => qa_opt('discord_integration_client_id'),
                     'scope' => 'identify guilds.join',

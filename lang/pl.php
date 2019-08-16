@@ -9,6 +9,7 @@ return [
     'success_joined' => 'Gratulacje, dołączyłeś właśnie na nasz serwer!',
     'disconnect_button' => 'Odłącz powiązanie i opuść serwer',
     'disconnected_success' => 'Twoje konto zostało pomyślnie odłączone.',
+    'user_blocked' => 'Twoje konto jest zablokowane - nie możesz dołączyć do Discorda.',
     'already_connected_account' => 'To konto Discord jest już połączone z innym użytkownikiem.',
 
     'client_id' => 'ID klienta API Discord',
