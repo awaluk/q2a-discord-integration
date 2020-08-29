@@ -42,7 +42,7 @@ class discord_integration_event
                     $this->api->remove_user_from_guild($data['discord_id']);
 
                     qa_db_query_sub(
-                        "UPDATE ^discord_integrations SET disconnected_date=NOW() WHERE id_integration=#",
+                        'UPDATE ^discord_integrations SET disconnected_date=NOW() WHERE id_integration=#',
                         $data['id_integration']
                     );
                 }
