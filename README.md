@@ -16,7 +16,7 @@ Clone or download this repository or selected [release](https://github.com/awalu
 
 Prepare your Discord application. You might create it in [Discord Developer Portal](https://discord.com/developers/applications/).
 
-Go to admin panel and `Plugins` tab (*/admin/plugins*). Next, search *Discord integration* and click *settings* link next to the plugin description.
+Go to admin panel and `Plugins` tab (*/admin/plugins*). Q2A should automatically prompt for execute database changes, for example by red alert on page top: `The Discord integration admin page module requires some database initialization`. Click it. Next, search *Discord integration* and click *settings* link next to the plugin description.
 
 | Option | Description | Required? / Default value |
 | --- | --- | --- |
