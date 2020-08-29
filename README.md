@@ -14,7 +14,7 @@ Clone or download this repository or selected [release](https://github.com/awalu
  
 ## Configuration
 
-Prepare your Discord application. You might create it in [Discord Developer Portal](https://discordapp.com/developers/applications/).
+Prepare your Discord application. You might create it in [Discord Developer Portal](https://discord.com/developers/applications/).
 
 Go to admin panel and `Plugins` tab (*/admin/plugins*). Next, search *Discord integration* and click *settings* link next to the plugin description.
 
