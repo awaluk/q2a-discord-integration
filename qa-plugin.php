@@ -4,7 +4,7 @@
     Plugin Name: Discord integration
     Plugin URI: https://github.com/awaluk/q2a-discord-integration
     Plugin Description: Link Discord accounts with Q2A accounts
-    Plugin Version: 1.0.0
+    Plugin Version: 1.0.1
     Plugin Date: 2020-08-29
     Plugin Author: Arkadiusz Waluk
     Plugin Author URI: https://waluk.pl
